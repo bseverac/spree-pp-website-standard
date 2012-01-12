@@ -37,7 +37,10 @@
     <input id="return" name="return" type="hidden" value="<%= Spree::PaypalWebsiteStandard::Config.success_url %>" />
     
     <input id="charset" name="charset" type="hidden" value="utf-8" />
-    
+    populate adress : <%= Spree::PaypalWebsiteStandard::Config.populate_address %>;<br/>
+    order :
+    <%=@order.inspect%>
+    <br/>
     <% if(Spree::PaypalWebsiteStandard::Config.populate_address && @order.bill_address) %>
       <input type="hidden"  name="address1"    id="address1" value="<%= @order.bill_address.address1 %>" />
       <input type="hidden"  name="address2"    id="address2" value="<%= @order.bill_address.address2 %>" />
