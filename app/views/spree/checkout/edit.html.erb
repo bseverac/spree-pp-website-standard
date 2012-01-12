@@ -12,10 +12,12 @@
     </div>
   <% end %>
 
-
+  out<br/>
   <% if(@order.state == "payment") %>
+  in<br/>
         <%= render('spree/checkout/paypal_checkout') if @order.payable_via_paypal?  %>
   <% else %>
+  in2<br/>
       <%= form_for @order, :url => update_checkout_path(@order.state), :html => { :id => "checkout_form_#{@order.state}" } do |form| %>
         <%= render @order.state, :form => form %>
         <input id="post-final" type="submit" style="display:none"/>
