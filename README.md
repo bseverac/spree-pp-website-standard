@@ -51,9 +51,8 @@ Be sure to configure the following configuration parameters. Preferably put it i
 
 Example:
 
-    Spree::Paypal::Config.set(:account => "foo@example.com") 
-    Spree::Paypal::Config.set(:success_url => "http://localhost:3000/paypal/confirm")
-    
+    Spree::PaypalWebsiteStandard::Config.set(:account => "foo@example.com") 
+    Spree::PaypalWebsiteStandard::Config.set(:success_url => "http://localhost:3000/paypal/confirm")
 
 The following configuration options (keys) can be set:
 
@@ -75,9 +74,9 @@ The last three are required for secure, encrypted operation (see below).
 
 The payment link can be encrypted using an SSL key pair and a PayPal public key. In order to attempt this encryption, the following elements must be available. If these are not available a normal link will be generated.
 
-Spree::Paypal::Config[:encrypted] must be set to true.
-Spree::Paypal::Config[:cert_id] must be set to a valid certificate id.
-Spree::Paypal::Config[:ipn_secret] must be set to a string considered secret.
+Spree::PaypalWebsiteStandard::Config.encrypted must be set to true.
+Spree::PaypalWebsiteStandard::Config.cert_id must be set to a valid certificate id.
+Spree::PaypalWebsiteStandard::Config.ipn_secret must be set to a string considered secret.
 Application must have a Rails.root/certs directory with following files:
 
     app_cert.pem # application certificate
